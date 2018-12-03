@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: easylinker-config
+  boot:
+    admin:
+      client:
+        url: http://localhost:2520
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://gitee.com/easylinker/easylinker-config
+          search-paths: respo
+          username: zhaolei@thunk.cn
+          password: zhao7878/love
+  zipkin:
+    base-url: http://localhost:2530
+
+server:
+  port: 2540
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2510/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
